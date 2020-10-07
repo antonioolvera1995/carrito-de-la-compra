@@ -11,14 +11,27 @@
 </head>
 
 <body>
+
+<div class="autocomplet"><div><p class="autocomplet-text">Autocompletar</p></div></div>
+
+    <div class="dialog">
+        <div  class="dialog-sub">
+
+        
+        </div>
+
+    </div>
     <main class="main">
         <div class="div-principal">
 
 
             <!-- --------------------header---------------------- -->
             <header class="header-1">
-                <div><h1>Rellene el formulario</h1>
-                    <h2>Ingrese todos los datos para enviar el formulario. Los datos opcionales no seran necesarios, pero los demas serán obligatorios.</h2></div>
+                <div>
+                    <h1>Rellene el formulario</h1>
+                    <h2>Ingrese todos los datos para enviar el formulario. Los datos opcionales no seran necesarios,
+                        pero los demas serán obligatorios.</h2>
+                </div>
             </header>
 
 
@@ -30,50 +43,50 @@
 
                     <div class="div-colum margin-right">
                         <p>Nombre</p>
-                        <input class="style-input" type="text">
+                        <input id="et-name" class="style-input" type="text">
                     </div>
 
                     <div class="div-colum margin-left">
                         <p>Apellidos</p>
-                        <input class="style-input"  type="text">
+                        <input id="et-lastname" class="style-input" type="text">
                     </div>
 
                 </div>
                 <div class="div-colum">
 
                     <p>Nombre de usuario</p>
-                    <input class="style-input"  type="text">
+                    <input id="et-username" class="style-input" type="text">
                 </div>
                 <div class="div-colum">
                     <p>Correo electrónico <span>Opcional</span></p>
-                    <input class="style-input"  type="text">
+                    <input id="et-email" class="style-input" type="text">
 
                 </div>
                 <div class="div-colum">
                     <p>Dirección</p>
-                    <input class="style-input"  type="text">
+                    <input id="et-adress" class="style-input" type="text">
 
                 </div>
                 <div class="div-colum">
 
                     <p>Dirección 2 <span>Opcional</span></p>
-                    <input class="style-input"  type="text">
+                    <input id="et-adress2" class="style-input" type="text">
                 </div>
                 <div class="div-row">
 
                     <div class="div-colum">
                         <p>Pais</p>
-                        <input class="style-input"  type="text">
+                        <input id="et-country" class="style-input" type="text">
                     </div>
 
                     <div class="div-colum margin-right margin-left">
                         <p>Provincia</p>
-                        <input class="style-input"  type="text">
+                        <input id="et-province" class="style-input" type="text">
                     </div>
 
                     <div class="div-colum">
                         <p>Código Postal</p>
-                        <input class="style-input"  type="text">
+                        <input id="et-postal" class="style-input" type="text">
                     </div>
 
                 </div>
@@ -82,12 +95,12 @@
                 <div class="choice bordes">
 
                     <div class="choice-1">
-                        <input  type="checkbox">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <input id="check1" type="checkbox">
+                        <p>La dirección de envío es la misma que mi dirección de facturación</p>
                     </div>
                     <div class="choice-1">
-                        <input  type="checkbox">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <input  id="check2"type="checkbox">
+                        <p>Guarde esta información para la próxima vez</p>
                     </div>
 
                 </div>
@@ -96,16 +109,41 @@
                 <div class="payment bordes">
 
 
+                    <div class="payment-sub">
+                        <div>
+                            <p class="title-radio">Payment</p>
+                        </div>
+                        <div>
+                            <div><input  id="radio1" type="radio"  name="radio"></div>
+                            
+                            <div>
+                                <p class="text-radio">Tarjeta de credito</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div><input  id="radio2" type="radio"  name="radio"></div>
+                            <div>
+                                <p class="text-radio">Tarjeta de debito</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div><input  id="radio3" type="radio"  name="radio"></div>
+                            <div>
+                                <p class="text-radio">Paypal</p>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="div-row">
                         <div class="div-colum margin-right">
-                            <p>Tipo de tarjeta</p>
-                            <input class="style-input"  type="text">
+                            <p>Nombre de la tarjeta</p>
+                            <input id="et-card" class="style-input" type="text">
                         </div>
 
                         <div class="div-colum margin-left">
                             <p>Numero de tarjeta</p>
-                            <input class="style-input"  type="text">
+                            <input id="et-numcard" class="style-input" type="text">
                         </div>
 
                     </div>
@@ -116,12 +154,12 @@
 
                         <div class="margin-right">
                             <p>Caducidad</p>
-                            <input class="style-input"  type="text">
+                            <input id="et-expiration" class="style-input" type="text">
                         </div>
 
                         <div class="margin-left">
                             <p>CVV</p>
-                            <input class="style-input"  type="text">
+                            <input id="et-cvv" class="style-input" type="text">
                         </div>
 
                     </div>
@@ -134,7 +172,7 @@
 
                 <!-- -------------------button-------------------- -->
 
-                <div class="button">
+                <div id="bt-fin" class="button">
                     <span>Pulsar para finalizar tu compra</span>
 
                 </div>
@@ -151,8 +189,12 @@
                 <div>
 
                     <div class="title-carro">
-                        <div class="title-carro-text"><p>Tu carro</p></div>
-                        <div class="title-carro-cantidad"><p>3</p></div>
+                        <div class="title-carro-text">
+                            <p>Tu carro</p>
+                        </div>
+                        <div class="title-carro-cantidad">
+                            <p>3</p>
+                        </div>
                     </div>
 
                     <div class="div-right-main">
@@ -245,10 +287,10 @@
 
                     <div class="promo">
                         <div class="et-promo">
-                            <input type="text">
+                            <input id="et-promo" type="text">
 
                         </div>
-                        <div class="bt-promo">
+                        <div id="bt-promo" class="bt-promo">
                             <p>VALIDAR</p>
 
                         </div>
