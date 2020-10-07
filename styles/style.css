@@ -441,6 +441,8 @@ height: 4em;
     border-radius: 0.3em;
     transition-duration: 200ms;
 
+
+
 }
 
 .autocomplet:hover{
@@ -475,3 +477,21 @@ margin: auto;
 
 
 
+
+
+.black{
+    font-weight: 600;
+}
+
+.green{
+    color: rgb(6, 180, 0);
+}
+
+.sombra-in{
+    box-shadow: inset 0px 0px 0.1em 0.06em rgba(0,0,0,0.2);
+}
+
+.sombra-butt{
+    box-shadow: inset 0px 0px 0.5em 0.1em rgba(255, 255, 255, 0.5);
+
+}

@@ -38,11 +38,11 @@ btFin.click(function () {
     datos.push('Pais: ' + country.val());
     datos.push('Provincia: ' + province.val());
     datos.push('Código postal: ' + postal.val());
-    datos.push(': ' + check1.checked);
-    datos.push(': ' + check2.checked);
-    datos.push(': ' + radio1.checked);
-    datos.push(': ' + radio2.checked);
-    datos.push(': ' + radio3.checked);
+    datos.push('La dirección de envío es la misma que mi dirección de facturación: ' + check1.checked);
+    datos.push('Guarde esta información para la próxima vez: ' + check2.checked);
+    datos.push('Tarjeta de credito: ' + radio1.checked);
+    datos.push('Tarjeta de debito: ' + radio2.checked);
+    datos.push('Paypal: ' + radio3.checked);
     datos.push('Nombre de la tarjeta: ' + card.val());
     datos.push('Numero de tarjeta: ' + numcard.val());
     datos.push('Caducidad: ' + expiration.val());
@@ -53,7 +53,20 @@ btFin.click(function () {
     $('main').css('display', 'none');
 
     importar(datos);
+    cambio();
 });
+
+let blockk = false;
+
+function cambio() {
+    if (!blockk) {
+        $('.autocomplet-text').text('Recargar');
+        blockk = true;
+        $('.autocomplet').css('z-index', '11');
+
+    }
+
+}
 
 
 function importar(datt) {
@@ -65,7 +78,6 @@ function importar(datt) {
         contenido += `<div class='dialog-sub-2'><p>${datt[i]}</p></div>`;
     }
 
-    console.log(contenido);
 
     dialogSub.append(contenido);
 }
@@ -80,7 +92,18 @@ $('#bt-promo').click(function (e) {
 
 $('.autocomplet').click(function (e) {
     e.preventDefault();
-    autocomplet();
+
+    if (blockk) {
+
+        location.reload();
+        console.log(blockk);
+        blockk = false;
+    } else {
+        autocomplet();
+    }
+
+
+
 
 });
 
@@ -98,39 +121,44 @@ function autocomplet() {
     country = $('#et-country').val('España');
     province = $('#et-province').val('Almeria');
     postal = $('#et-postal').val('04740');
-    check1 = $('#check1')[0].checked = true;
-    check2 = $('#check2')[0];
-    radio1 = $('#radio1')[0];
-    radio2 = $('#radio2')[0].checked = true;
-    radio3 = $('#radio3')[0];
+    $('#check1').attr('checked', 'true');
+    //  $('#check2');
+    //  $('#radio1');
+    $('#radio2').attr('checked', 'true');
+    // $('#radio3');
     card = $('#et-card').val('Mi card');
     numcard = $('#et-numcard').val('778216414');
-    expiration = $('#et-expiration').val('23/07/2029');
+    expiration = $('#et-expiration').val('2018-07-22');
     cvv = $('#et-cvv').val('048');
     promo = $('#et-promo').val('WefKn');
 }
 
 // --------------Ejemplo objeto---------------------------
 
-// function cargar(name,age,est) {
+// function cargar(name, age, est) {
 
-//     let persona =  {
+//     let persona = {
 
 //         nombre: name,
-//         edad:age,
-//         estado:()=>{console.log(est);},
-//         sangre:(can)=>{
 
+//         edad: age,
 
-//             return can*1000;
+//         estado: function () {
+//             console.log(est);
+//         },
+
+//         sangre: function (can) {
+
+//             let devv = this.edad + can * 1000;
+//             return devv;
 //         }
 
 //     }
-// return persona;
+//     return persona;
 
 // }
 
-// let antonio = cargar('Antonio',25,'muerto');
+// let antonio = new cargar('Antonio', 25, 'muerto');
 
 // antonio.estado();
-// console.log(antonio.nombre, antonio.edad,antonio.sangre(5));
+// console.log(antonio.nombre, antonio.edad, antonio.sangre(5));
