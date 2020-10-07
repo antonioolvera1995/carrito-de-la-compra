@@ -20,8 +20,8 @@ let numcard = $('#et-numcard');
 let expiration = $('#et-expiration');
 let cvv = $('#et-cvv');
 let promo = $('#et-promo');
-let btPromo = $('#bt-promo');
 let btFin = $('#bt-fin');
+
 
 let datos = [];
 
@@ -29,29 +29,28 @@ let dialog = $('.dialog');
 let dialogSub = $('.dialog-sub');
 
 btFin.click(function () {
-
-    datos.push('Nombre: '+name.val());
-    datos.push('Apellidos: '+lastName.val());
-    datos.push(''+userName.val());
-    datos.push(''+email.val());
-    datos.push(''+adress.val());
-    datos.push(''+adress2.val());
-    datos.push(''+country.val());
-    datos.push(''+province.val());
-    datos.push(''+postal.val());
-    datos.push(''+check1.checked);
-    datos.push(''+check2.checked);
-    datos.push(''+radio1.checked);
-    datos.push(''+radio2.checked);
-    datos.push(''+radio3.checked);
-    datos.push(''+card.val());
-    datos.push(''+numcard.val());
-    datos.push(''+expiration.val());
-    datos.push(''+cvv.val());
-    datos.push(''+promo.val());
+    datos.push('Nombre: ' + name.val());
+    datos.push('Apellidos: ' + lastName.val());
+    datos.push('Nombre de usuario: ' + userName.val());
+    datos.push('Correo electrónico: ' + email.val());
+    datos.push('Dirección: ' + adress.val());
+    datos.push('Dirección 2: ' + adress2.val());
+    datos.push('Pais: ' + country.val());
+    datos.push('Provincia: ' + province.val());
+    datos.push('Código postal: ' + postal.val());
+    datos.push(': ' + check1.checked);
+    datos.push(': ' + check2.checked);
+    datos.push(': ' + radio1.checked);
+    datos.push(': ' + radio2.checked);
+    datos.push(': ' + radio3.checked);
+    datos.push('Nombre de la tarjeta: ' + card.val());
+    datos.push('Numero de tarjeta: ' + numcard.val());
+    datos.push('Caducidad: ' + expiration.val());
+    datos.push('CVV: ' + cvv.val());
+    datos.push('Código promocional: ' + promo.val());
 
     dialog.css('display', 'flex');
-$('main').css('display', 'none');
+    $('main').css('display', 'none');
 
     importar(datos);
 });
@@ -59,24 +58,57 @@ $('main').css('display', 'none');
 
 function importar(datt) {
 
-let contenido = []; 
+    let contenido = [];
 
-for(let i=0;i<datt.length;i++){
-   
-    contenido += `<div class='dialog-sub-2'><p>${datt[i]}</p></div>`;
+    for (let i = 0; i < datt.length; i++) {
+
+        contenido += `<div class='dialog-sub-2'><p>${datt[i]}</p></div>`;
+    }
+
+    console.log(contenido);
+
+    dialogSub.append(contenido);
 }
 
-console.log(contenido);
 
-dialogSub.append(contenido);
+
+$('#bt-promo').click(function (e) {
+    e.preventDefault();
+
+    alert('Código promocional: ' + $('#et-promo').val())
+});
+
+$('.autocomplet').click(function (e) {
+    e.preventDefault();
+    autocomplet();
+
+});
+
+
+
+
+
+function autocomplet() {
+    name = $('#et-name').val('Antonio');
+    lastName = $('#et-lastname').val('Olvera');
+    userName = $('#et-username').val('Toni');
+    email = $('#et-email').val('ejemplo@gmail.com');
+    adress = $('#et-adress').val('Calle jota nº3');
+    adress2 = $('#et-adress2').val('Calle jota nº1');
+    country = $('#et-country').val('España');
+    province = $('#et-province').val('Almeria');
+    postal = $('#et-postal').val('04740');
+    check1 = $('#check1')[0].checked = true;
+    check2 = $('#check2')[0];
+    radio1 = $('#radio1')[0];
+    radio2 = $('#radio2')[0].checked = true;
+    radio3 = $('#radio3')[0];
+    card = $('#et-card').val('Mi card');
+    numcard = $('#et-numcard').val('778216414');
+    expiration = $('#et-expiration').val('23/07/2029');
+    cvv = $('#et-cvv').val('048');
+    promo = $('#et-promo').val('WefKn');
 }
-
-
-
-
-
-
-
 
 // --------------Ejemplo objeto---------------------------
 
@@ -89,7 +121,7 @@ dialogSub.append(contenido);
 //         estado:()=>{console.log(est);},
 //         sangre:(can)=>{
 
-            
+
 //             return can*1000;
 //         }
 
