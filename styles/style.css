@@ -492,6 +492,23 @@ margin: auto;
 }
 
 .sombra-butt{
-    box-shadow: inset 0px 0px 0.5em 0.1em rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0px 0px 0.9em 0.2em rgba(255, 255, 255, 0.5);
+
+}
+.sombra-butt-2{
+    box-shadow: inset 0px 0px 0.3em 0.1em rgba(255, 255, 255, 0.7);
+
+}
+
+
+.cvv-recort{
+
+    width: 6em;
+
+}
+
+.caduc-recort{
+
+    width: 10em;
 
 }

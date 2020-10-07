@@ -133,32 +133,3 @@ function autocomplet() {
     promo = $('#et-promo').val('WefKn');
 }
 
-// --------------Ejemplo objeto---------------------------
-
-// function cargar(name, age, est) {
-
-//     let persona = {
-
-//         nombre: name,
-
-//         edad: age,
-
-//         estado: function () {
-//             console.log(est);
-//         },
-
-//         sangre: function (can) {
-
-//             let devv = this.edad + can * 1000;
-//             return devv;
-//         }
-
-//     }
-//     return persona;
-
-// }
-
-// let antonio = new cargar('Antonio', 25, 'muerto');
-
-// antonio.estado();
-// console.log(antonio.nombre, antonio.edad, antonio.sangre(5));
