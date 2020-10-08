@@ -132,4 +132,3 @@ function autocomplet() {
     cvv = $('#et-cvv').val('048');
     promo = $('#et-promo').val('WefKn');
 }
-
